@@ -1,0 +1,31 @@
+\hypertarget{classkafi_1_1prediction}{}\section{kafi\+:\+:prediction$<$ N, M $>$ Class Template Reference}
+\label{classkafi_1_1prediction}\index{kafi\+::prediction$<$ N, M $>$@{kafi\+::prediction$<$ N, M $>$}}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classkafi_1_1prediction_a13da3540b254c21d3f407b17d199743b}\label{classkafi_1_1prediction_a13da3540b254c21d3f407b17d199743b}} 
+using {\bfseries self\+\_\+t} = \hyperlink{classkafi_1_1prediction}{prediction}$<$ N, M $>$
+\item 
+\mbox{\Hypertarget{classkafi_1_1prediction_ac9d5346f2aebc993eb506109e0f91579}\label{classkafi_1_1prediction_ac9d5346f2aebc993eb506109e0f91579}} 
+using {\bfseries nxn\+\_\+matrix} = blaze\+::\+Static\+Matrix$<$ double, N, N, blaze\+::row\+Major $>$
+\item 
+\mbox{\Hypertarget{classkafi_1_1prediction_a47ab0d9e6057b2c34603361e2ce26e2a}\label{classkafi_1_1prediction_a47ab0d9e6057b2c34603361e2ce26e2a}} 
+using {\bfseries nx1\+\_\+vector} = blaze\+::\+Static\+Matrix$<$ double, N, 1\+U\+L, blaze\+::row\+Major $>$
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classkafi_1_1prediction_a9b40f7f169dc8db5847c845ad3afb2e7}\label{classkafi_1_1prediction_a9b40f7f169dc8db5847c845ad3afb2e7}} 
+{\bfseries prediction} (const \hyperlink{classkafi_1_1prediction}{self\+\_\+t} \&other)=delete
+\item 
+\mbox{\Hypertarget{classkafi_1_1prediction_a02a1cdfabf957cfa49590ddcb161f2ac}\label{classkafi_1_1prediction_a02a1cdfabf957cfa49590ddcb161f2ac}} 
+{\bfseries prediction} (const \hyperlink{classkafi_1_1prediction}{self\+\_\+t} \&\&other)=delete
+\item 
+\mbox{\Hypertarget{classkafi_1_1prediction_a24aa3e00565379877c5497d52f76b5e3}\label{classkafi_1_1prediction_a24aa3e00565379877c5497d52f76b5e3}} 
+std\+::tuple$<$ nx1\+\_\+vector \&, nxn\+\_\+matrix \& $>$ \& {\bfseries apply} (const \hyperlink{classkafi_1_1jacobian__function}{jacobian\+\_\+function}$<$ N, N $>$ \&state\+\_\+transition, nxn\+\_\+matrix \&, const nxn\+\_\+matrix \&prediction\+\_\+error, const nxn\+\_\+matrix \&\&process\+\_\+noise)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+library/prediction.\+h\end{DoxyCompactItemize}

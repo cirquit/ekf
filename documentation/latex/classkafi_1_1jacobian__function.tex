@@ -1,0 +1,187 @@
+\hypertarget{classkafi_1_1jacobian__function}{}\section{kafi\+:\+:jacobian\+\_\+function$<$ N, M $>$ Class Template Reference}
+\label{classkafi_1_1jacobian__function}\index{kafi\+::jacobian\+\_\+function$<$ N, M $>$@{kafi\+::jacobian\+\_\+function$<$ N, M $>$}}
+
+
+A wrapper function that stores a function and its jacobian.  
+
+
+
+
+{\ttfamily \#include $<$jacobian\+\_\+function.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classkafi_1_1jacobian__function_a2981d3ce9a411bfc393aaf3ba822cdbe}\label{classkafi_1_1jacobian__function_a2981d3ce9a411bfc393aaf3ba822cdbe}} 
+using \hyperlink{classkafi_1_1jacobian__function_a2981d3ce9a411bfc393aaf3ba822cdbe}{self\+\_\+t} = \hyperlink{classkafi_1_1jacobian__function}{jacobian\+\_\+function}$<$ N, M $>$
+\begin{DoxyCompactList}\small\item\em self type for conciseness \end{DoxyCompactList}\item 
+using \hyperlink{classkafi_1_1jacobian__function_ad7e7a8fbfa3e2785798bd46e5307ca65}{nx1\+\_\+vector} = blaze\+::\+Static\+Matrix$<$ double, N, 1\+U\+L, blaze\+::row\+Major $>$
+\item 
+using \hyperlink{classkafi_1_1jacobian__function_ad8e32b40bc05db5ee53705a30257761d}{mx1\+\_\+vector} = blaze\+::\+Static\+Matrix$<$ double, M, 1\+U\+L, blaze\+::row\+Major $>$
+\item 
+using \hyperlink{classkafi_1_1jacobian__function_afdc859dfbc351b172814b235b577413f}{mxn\+\_\+matrix} = blaze\+::\+Static\+Matrix$<$ double, M, N, blaze\+::row\+Major $>$
+\item 
+using \hyperlink{classkafi_1_1jacobian__function_a3894846c2c1903184c3473698dc89152}{nxm\+\_\+matrix} = blaze\+::\+Static\+Matrix$<$ double, N, M, blaze\+::row\+Major $>$
+\item 
+using \hyperlink{classkafi_1_1jacobian__function_a3cfd8181614c2795ae040118ff143a8e}{mxm\+\_\+matrix} = blaze\+::\+Static\+Matrix$<$ double, M, M, blaze\+::row\+Major $>$
+\item 
+using \hyperlink{classkafi_1_1jacobian__function_a5bac68a534ee628e1e474cf46a7ff035}{nxn\+\_\+matrix} = blaze\+::\+Static\+Matrix$<$ double, N, N, blaze\+::row\+Major $>$
+\item 
+using \hyperlink{classkafi_1_1jacobian__function_a91cc300a9dba8c3e6787510d48e6fc37}{func} = std\+::function$<$ void(\hyperlink{classkafi_1_1jacobian__function_ad7e7a8fbfa3e2785798bd46e5307ca65}{nx1\+\_\+vector} \&, \hyperlink{classkafi_1_1jacobian__function_ad8e32b40bc05db5ee53705a30257761d}{mx1\+\_\+vector} \&)$>$
+\item 
+using \hyperlink{classkafi_1_1jacobian__function_a4133d937d8f1d502de7424cb1f4f4e36}{par\+\_\+jacobi\+\_\+func} = std\+::function$<$ double(const \hyperlink{classkafi_1_1jacobian__function_ad7e7a8fbfa3e2785798bd46e5307ca65}{nx1\+\_\+vector} \&)$>$
+\item 
+using \hyperlink{classkafi_1_1jacobian__function_ac8f4a65fbe71eb34d1b7914024ad2d85}{jacobi\+\_\+func} = blaze\+::\+Static\+Matrix$<$ \hyperlink{classkafi_1_1jacobian__function_a4133d937d8f1d502de7424cb1f4f4e36}{par\+\_\+jacobi\+\_\+func}, M, N, blaze\+::row\+Major $>$
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classkafi_1_1jacobian__function_af37f73951723d1791a85a6da01f399a0}\label{classkafi_1_1jacobian__function_af37f73951723d1791a85a6da01f399a0}} 
+constexpr \hyperlink{classkafi_1_1jacobian__function_af37f73951723d1791a85a6da01f399a0}{jacobian\+\_\+function} (\hyperlink{classkafi_1_1jacobian__function_a91cc300a9dba8c3e6787510d48e6fc37}{func} f, \hyperlink{classkafi_1_1jacobian__function_ac8f4a65fbe71eb34d1b7914024ad2d85}{jacobi\+\_\+func} F)
+\begin{DoxyCompactList}\small\item\em Default constructor with the normal function {\ttfamily f} and its derivative {\ttfamily F} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classkafi_1_1jacobian__function_a89f0c2ad30865138c34b4801e44ca2eb}\label{classkafi_1_1jacobian__function_a89f0c2ad30865138c34b4801e44ca2eb}} 
+constexpr \hyperlink{classkafi_1_1jacobian__function_a89f0c2ad30865138c34b4801e44ca2eb}{jacobian\+\_\+function} (const \hyperlink{classkafi_1_1jacobian__function_a2981d3ce9a411bfc393aaf3ba822cdbe}{self\+\_\+t} \&other)=delete
+\begin{DoxyCompactList}\small\item\em copy constructor is deleted, because we want to disallow copying of matrices (which may be added to this class ownership) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classkafi_1_1jacobian__function_a8a4a94d30e8798b1a85fe47594c4ff13}\label{classkafi_1_1jacobian__function_a8a4a94d30e8798b1a85fe47594c4ff13}} 
+constexpr \hyperlink{classkafi_1_1jacobian__function_a8a4a94d30e8798b1a85fe47594c4ff13}{jacobian\+\_\+function} (const \hyperlink{classkafi_1_1jacobian__function_a2981d3ce9a411bfc393aaf3ba822cdbe}{self\+\_\+t} \&\&other)
+\begin{DoxyCompactList}\small\item\em move constructor \end{DoxyCompactList}\item 
+constexpr void \hyperlink{classkafi_1_1jacobian__function_a10675231d99de2d565af965efa4010e8}{operator()} (\hyperlink{classkafi_1_1jacobian__function_ad7e7a8fbfa3e2785798bd46e5307ca65}{nx1\+\_\+vector} \&state, \hyperlink{classkafi_1_1jacobian__function_ad8e32b40bc05db5ee53705a30257761d}{mx1\+\_\+vector} \&output) const
+\begin{DoxyCompactList}\small\item\em Forwarding to the \textquotesingle{}f\textquotesingle{} function. \end{DoxyCompactList}\item 
+constexpr \hyperlink{classkafi_1_1jacobian__function_afdc859dfbc351b172814b235b577413f}{mxn\+\_\+matrix} \& \hyperlink{classkafi_1_1jacobian__function_a769dbc859c0bbc91f2104e31a81b86aa}{jacobian} (const \hyperlink{classkafi_1_1jacobian__function_ad7e7a8fbfa3e2785798bd46e5307ca65}{nx1\+\_\+vector} \&state, \hyperlink{classkafi_1_1jacobian__function_afdc859dfbc351b172814b235b577413f}{mxn\+\_\+matrix} \&jacobi\+\_\+temp) const
+\begin{DoxyCompactList}\small\item\em Iterates over all partial derivatives of {\ttfamily \+\_\+f} in {\ttfamily \+\_\+F} and runs them with {\ttfamily state} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classkafi_1_1jacobian__function_ae551a0ef2e6ee9ca40f455bccbd5a3e3}\label{classkafi_1_1jacobian__function_ae551a0ef2e6ee9ca40f455bccbd5a3e3}} 
+const \hyperlink{classkafi_1_1jacobian__function_a91cc300a9dba8c3e6787510d48e6fc37}{func} \hyperlink{classkafi_1_1jacobian__function_ae551a0ef2e6ee9ca40f455bccbd5a3e3}{\+\_\+f}
+\begin{DoxyCompactList}\small\item\em normal function {\ttfamily \+\_\+f \+:\+: nx1\+\_\+vector -\/$>$ mx1\+\_\+vector} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classkafi_1_1jacobian__function_a8a6149b733edc0b36c186fc060a3d976}\label{classkafi_1_1jacobian__function_a8a6149b733edc0b36c186fc060a3d976}} 
+const \hyperlink{classkafi_1_1jacobian__function_ac8f4a65fbe71eb34d1b7914024ad2d85}{jacobi\+\_\+func} \hyperlink{classkafi_1_1jacobian__function_a8a6149b733edc0b36c186fc060a3d976}{\+\_\+F}
+\begin{DoxyCompactList}\small\item\em jacobian function {\ttfamily \+\_\+F \+:\+: nx1\+\_\+vector -\/$>$ mxn\+\_\+matrix} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$size\+\_\+t N, size\+\_\+t M$>$\newline
+class kafi\+::jacobian\+\_\+function$<$ N, M $>$}
+
+A wrapper function that stores a function and its jacobian. 
+
+This is currently working with references of the return values so this class doesn\textquotesingle{}t have any ownership over the stored data
+
+Template arguments\+:
+\begin{DoxyItemize}
+\item {\ttfamily N} = state dimensions
+\item {\ttfamily M} = sensor dimensions
+\end{DoxyItemize}
+
+For examples, see \href{../../tests/jacobian_function_tests.cc}{\tt tests/jacobian\+\_\+function\+\_\+tests.\+cc} 
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classkafi_1_1jacobian__function_a91cc300a9dba8c3e6787510d48e6fc37}\label{classkafi_1_1jacobian__function_a91cc300a9dba8c3e6787510d48e6fc37}} 
+\index{kafi\+::jacobian\+\_\+function@{kafi\+::jacobian\+\_\+function}!func@{func}}
+\index{func@{func}!kafi\+::jacobian\+\_\+function@{kafi\+::jacobian\+\_\+function}}
+\subsubsection{\texorpdfstring{func}{func}}
+{\footnotesize\ttfamily template$<$size\+\_\+t N, size\+\_\+t M$>$ \\
+using \hyperlink{classkafi_1_1jacobian__function}{kafi\+::jacobian\+\_\+function}$<$ N, M $>$\+::\hyperlink{classkafi_1_1jacobian__function_a91cc300a9dba8c3e6787510d48e6fc37}{func} =  std\+::function$<$void(\hyperlink{classkafi_1_1jacobian__function_ad7e7a8fbfa3e2785798bd46e5307ca65}{nx1\+\_\+vector} \&, \hyperlink{classkafi_1_1jacobian__function_ad8e32b40bc05db5ee53705a30257761d}{mx1\+\_\+vector} \&)$>$}
+
+function that takes {\ttfamily (N x 1)} and returns {\ttfamily (M x 1)} \mbox{\Hypertarget{classkafi_1_1jacobian__function_ac8f4a65fbe71eb34d1b7914024ad2d85}\label{classkafi_1_1jacobian__function_ac8f4a65fbe71eb34d1b7914024ad2d85}} 
+\index{kafi\+::jacobian\+\_\+function@{kafi\+::jacobian\+\_\+function}!jacobi\+\_\+func@{jacobi\+\_\+func}}
+\index{jacobi\+\_\+func@{jacobi\+\_\+func}!kafi\+::jacobian\+\_\+function@{kafi\+::jacobian\+\_\+function}}
+\subsubsection{\texorpdfstring{jacobi\+\_\+func}{jacobi\_func}}
+{\footnotesize\ttfamily template$<$size\+\_\+t N, size\+\_\+t M$>$ \\
+using \hyperlink{classkafi_1_1jacobian__function}{kafi\+::jacobian\+\_\+function}$<$ N, M $>$\+::\hyperlink{classkafi_1_1jacobian__function_ac8f4a65fbe71eb34d1b7914024ad2d85}{jacobi\+\_\+func} =  blaze\+::\+Static\+Matrix$<$\hyperlink{classkafi_1_1jacobian__function_a4133d937d8f1d502de7424cb1f4f4e36}{par\+\_\+jacobi\+\_\+func}, M, N, blaze\+::row\+Major$>$}
+
+full {\ttfamily M x N} matrix of partial derivatives of \hyperlink{classkafi_1_1jacobian__function_a91cc300a9dba8c3e6787510d48e6fc37}{jacobian\+\_\+function\+::func} \mbox{\Hypertarget{classkafi_1_1jacobian__function_ad8e32b40bc05db5ee53705a30257761d}\label{classkafi_1_1jacobian__function_ad8e32b40bc05db5ee53705a30257761d}} 
+\index{kafi\+::jacobian\+\_\+function@{kafi\+::jacobian\+\_\+function}!mx1\+\_\+vector@{mx1\+\_\+vector}}
+\index{mx1\+\_\+vector@{mx1\+\_\+vector}!kafi\+::jacobian\+\_\+function@{kafi\+::jacobian\+\_\+function}}
+\subsubsection{\texorpdfstring{mx1\+\_\+vector}{mx1\_vector}}
+{\footnotesize\ttfamily template$<$size\+\_\+t N, size\+\_\+t M$>$ \\
+using \hyperlink{classkafi_1_1jacobian__function}{kafi\+::jacobian\+\_\+function}$<$ N, M $>$\+::\hyperlink{classkafi_1_1jacobian__function_ad8e32b40bc05db5ee53705a30257761d}{mx1\+\_\+vector} =  blaze\+::\+Static\+Matrix$<$double, M, 1\+U\+L, blaze\+::row\+Major$>$}
+
+{\ttfamily M} rows, {\ttfamily 1} column {\ttfamily (M x 1)} \mbox{\Hypertarget{classkafi_1_1jacobian__function_a3cfd8181614c2795ae040118ff143a8e}\label{classkafi_1_1jacobian__function_a3cfd8181614c2795ae040118ff143a8e}} 
+\index{kafi\+::jacobian\+\_\+function@{kafi\+::jacobian\+\_\+function}!mxm\+\_\+matrix@{mxm\+\_\+matrix}}
+\index{mxm\+\_\+matrix@{mxm\+\_\+matrix}!kafi\+::jacobian\+\_\+function@{kafi\+::jacobian\+\_\+function}}
+\subsubsection{\texorpdfstring{mxm\+\_\+matrix}{mxm\_matrix}}
+{\footnotesize\ttfamily template$<$size\+\_\+t N, size\+\_\+t M$>$ \\
+using \hyperlink{classkafi_1_1jacobian__function}{kafi\+::jacobian\+\_\+function}$<$ N, M $>$\+::\hyperlink{classkafi_1_1jacobian__function_a3cfd8181614c2795ae040118ff143a8e}{mxm\+\_\+matrix} =  blaze\+::\+Static\+Matrix$<$double, M, M, blaze\+::row\+Major$>$}
+
+defining this type here to have a single point of access \mbox{\Hypertarget{classkafi_1_1jacobian__function_afdc859dfbc351b172814b235b577413f}\label{classkafi_1_1jacobian__function_afdc859dfbc351b172814b235b577413f}} 
+\index{kafi\+::jacobian\+\_\+function@{kafi\+::jacobian\+\_\+function}!mxn\+\_\+matrix@{mxn\+\_\+matrix}}
+\index{mxn\+\_\+matrix@{mxn\+\_\+matrix}!kafi\+::jacobian\+\_\+function@{kafi\+::jacobian\+\_\+function}}
+\subsubsection{\texorpdfstring{mxn\+\_\+matrix}{mxn\_matrix}}
+{\footnotesize\ttfamily template$<$size\+\_\+t N, size\+\_\+t M$>$ \\
+using \hyperlink{classkafi_1_1jacobian__function}{kafi\+::jacobian\+\_\+function}$<$ N, M $>$\+::\hyperlink{classkafi_1_1jacobian__function_afdc859dfbc351b172814b235b577413f}{mxn\+\_\+matrix} =  blaze\+::\+Static\+Matrix$<$double, M, N, blaze\+::row\+Major$>$}
+
+Return type of applied partial derivatives with {\ttfamily M} rows, {\ttfamily N} columns \mbox{\Hypertarget{classkafi_1_1jacobian__function_ad7e7a8fbfa3e2785798bd46e5307ca65}\label{classkafi_1_1jacobian__function_ad7e7a8fbfa3e2785798bd46e5307ca65}} 
+\index{kafi\+::jacobian\+\_\+function@{kafi\+::jacobian\+\_\+function}!nx1\+\_\+vector@{nx1\+\_\+vector}}
+\index{nx1\+\_\+vector@{nx1\+\_\+vector}!kafi\+::jacobian\+\_\+function@{kafi\+::jacobian\+\_\+function}}
+\subsubsection{\texorpdfstring{nx1\+\_\+vector}{nx1\_vector}}
+{\footnotesize\ttfamily template$<$size\+\_\+t N, size\+\_\+t M$>$ \\
+using \hyperlink{classkafi_1_1jacobian__function}{kafi\+::jacobian\+\_\+function}$<$ N, M $>$\+::\hyperlink{classkafi_1_1jacobian__function_ad7e7a8fbfa3e2785798bd46e5307ca65}{nx1\+\_\+vector} =  blaze\+::\+Static\+Matrix$<$double, N, 1\+U\+L, blaze\+::row\+Major$>$}
+
+{\ttfamily N} rows, {\ttfamily 1} column {\ttfamily (N x 1)} \mbox{\Hypertarget{classkafi_1_1jacobian__function_a3894846c2c1903184c3473698dc89152}\label{classkafi_1_1jacobian__function_a3894846c2c1903184c3473698dc89152}} 
+\index{kafi\+::jacobian\+\_\+function@{kafi\+::jacobian\+\_\+function}!nxm\+\_\+matrix@{nxm\+\_\+matrix}}
+\index{nxm\+\_\+matrix@{nxm\+\_\+matrix}!kafi\+::jacobian\+\_\+function@{kafi\+::jacobian\+\_\+function}}
+\subsubsection{\texorpdfstring{nxm\+\_\+matrix}{nxm\_matrix}}
+{\footnotesize\ttfamily template$<$size\+\_\+t N, size\+\_\+t M$>$ \\
+using \hyperlink{classkafi_1_1jacobian__function}{kafi\+::jacobian\+\_\+function}$<$ N, M $>$\+::\hyperlink{classkafi_1_1jacobian__function_a3894846c2c1903184c3473698dc89152}{nxm\+\_\+matrix} =  blaze\+::\+Static\+Matrix$<$double, N, M, blaze\+::row\+Major$>$}
+
+defining this type here to have a single point of access \mbox{\Hypertarget{classkafi_1_1jacobian__function_a5bac68a534ee628e1e474cf46a7ff035}\label{classkafi_1_1jacobian__function_a5bac68a534ee628e1e474cf46a7ff035}} 
+\index{kafi\+::jacobian\+\_\+function@{kafi\+::jacobian\+\_\+function}!nxn\+\_\+matrix@{nxn\+\_\+matrix}}
+\index{nxn\+\_\+matrix@{nxn\+\_\+matrix}!kafi\+::jacobian\+\_\+function@{kafi\+::jacobian\+\_\+function}}
+\subsubsection{\texorpdfstring{nxn\+\_\+matrix}{nxn\_matrix}}
+{\footnotesize\ttfamily template$<$size\+\_\+t N, size\+\_\+t M$>$ \\
+using \hyperlink{classkafi_1_1jacobian__function}{kafi\+::jacobian\+\_\+function}$<$ N, M $>$\+::\hyperlink{classkafi_1_1jacobian__function_a5bac68a534ee628e1e474cf46a7ff035}{nxn\+\_\+matrix} =  blaze\+::\+Static\+Matrix$<$double, N, N, blaze\+::row\+Major$>$}
+
+defining this type here to have a single point of access \mbox{\Hypertarget{classkafi_1_1jacobian__function_a4133d937d8f1d502de7424cb1f4f4e36}\label{classkafi_1_1jacobian__function_a4133d937d8f1d502de7424cb1f4f4e36}} 
+\index{kafi\+::jacobian\+\_\+function@{kafi\+::jacobian\+\_\+function}!par\+\_\+jacobi\+\_\+func@{par\+\_\+jacobi\+\_\+func}}
+\index{par\+\_\+jacobi\+\_\+func@{par\+\_\+jacobi\+\_\+func}!kafi\+::jacobian\+\_\+function@{kafi\+::jacobian\+\_\+function}}
+\subsubsection{\texorpdfstring{par\+\_\+jacobi\+\_\+func}{par\_jacobi\_func}}
+{\footnotesize\ttfamily template$<$size\+\_\+t N, size\+\_\+t M$>$ \\
+using \hyperlink{classkafi_1_1jacobian__function}{kafi\+::jacobian\+\_\+function}$<$ N, M $>$\+::\hyperlink{classkafi_1_1jacobian__function_a4133d937d8f1d502de7424cb1f4f4e36}{par\+\_\+jacobi\+\_\+func} =  std\+::function$<$double(const \hyperlink{classkafi_1_1jacobian__function_ad7e7a8fbfa3e2785798bd46e5307ca65}{nx1\+\_\+vector} \&)$>$}
+
+partial derivative of fun for a single dimension of {\ttfamily N} 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classkafi_1_1jacobian__function_a769dbc859c0bbc91f2104e31a81b86aa}\label{classkafi_1_1jacobian__function_a769dbc859c0bbc91f2104e31a81b86aa}} 
+\index{kafi\+::jacobian\+\_\+function@{kafi\+::jacobian\+\_\+function}!jacobian@{jacobian}}
+\index{jacobian@{jacobian}!kafi\+::jacobian\+\_\+function@{kafi\+::jacobian\+\_\+function}}
+\subsubsection{\texorpdfstring{jacobian()}{jacobian()}}
+{\footnotesize\ttfamily template$<$size\+\_\+t N, size\+\_\+t M$>$ \\
+constexpr \hyperlink{classkafi_1_1jacobian__function_afdc859dfbc351b172814b235b577413f}{mxn\+\_\+matrix}\& \hyperlink{classkafi_1_1jacobian__function}{kafi\+::jacobian\+\_\+function}$<$ N, M $>$\+::jacobian (\begin{DoxyParamCaption}\item[{const \hyperlink{classkafi_1_1jacobian__function_ad7e7a8fbfa3e2785798bd46e5307ca65}{nx1\+\_\+vector} \&}]{state,  }\item[{\hyperlink{classkafi_1_1jacobian__function_afdc859dfbc351b172814b235b577413f}{mxn\+\_\+matrix} \&}]{jacobi\+\_\+temp }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Iterates over all partial derivatives of {\ttfamily \+\_\+f} in {\ttfamily \+\_\+F} and runs them with {\ttfamily state} 
+
+Saving the results in \textquotesingle{}jacobi\+\_\+temp\textquotesingle{} matrix to be fully functional and parallelizable
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000002}{Todo}]make a functional version of this call with {\ttfamily mxn\+\_\+matrix} as return type and test the performance decrease \end{DoxyRefDesc}
+\mbox{\Hypertarget{classkafi_1_1jacobian__function_a10675231d99de2d565af965efa4010e8}\label{classkafi_1_1jacobian__function_a10675231d99de2d565af965efa4010e8}} 
+\index{kafi\+::jacobian\+\_\+function@{kafi\+::jacobian\+\_\+function}!operator()@{operator()}}
+\index{operator()@{operator()}!kafi\+::jacobian\+\_\+function@{kafi\+::jacobian\+\_\+function}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}}
+{\footnotesize\ttfamily template$<$size\+\_\+t N, size\+\_\+t M$>$ \\
+constexpr void \hyperlink{classkafi_1_1jacobian__function}{kafi\+::jacobian\+\_\+function}$<$ N, M $>$\+::operator() (\begin{DoxyParamCaption}\item[{\hyperlink{classkafi_1_1jacobian__function_ad7e7a8fbfa3e2785798bd46e5307ca65}{nx1\+\_\+vector} \&}]{state,  }\item[{\hyperlink{classkafi_1_1jacobian__function_ad8e32b40bc05db5ee53705a30257761d}{mx1\+\_\+vector} \&}]{output }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Forwarding to the \textquotesingle{}f\textquotesingle{} function. 
+
+
+\begin{DoxyItemize}
+\item {\ttfamily state} $\sim$= input, {\bfseries I\+M\+P\+O\+R\+T\+A\+NT}\+: state might be equal to output, so use a deep copy if you need the values
+\item {\ttfamily output} is the return type, because we want a constant memory footprint
+\begin{DoxyItemize}
+\item therefore the return type is preallocated and reused
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000001}{Todo}]make a functional version of this call with {\ttfamily mx1\+\_\+vector} as return type and test the performance decrease \end{DoxyRefDesc}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+library/jacobian\+\_\+function.\+h\end{DoxyCompactItemize}

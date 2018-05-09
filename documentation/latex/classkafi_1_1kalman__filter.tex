@@ -1,0 +1,52 @@
+\hypertarget{classkafi_1_1kalman__filter}{}\section{kafi\+:\+:kalman\+\_\+filter Class Reference}
+\label{classkafi_1_1kalman__filter}\index{kafi\+::kalman\+\_\+filter@{kafi\+::kalman\+\_\+filter}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classkafi_1_1kalman__filter_a8840e542475fe52d075f4f7ca217e430}\label{classkafi_1_1kalman__filter_a8840e542475fe52d075f4f7ca217e430}} 
+{\bfseries kalman\+\_\+filter} (size\+\_\+t state\+\_\+dimension\+\_\+n, size\+\_\+t sensor\+\_\+dimension\+\_\+m, size\+\_\+t control\+\_\+dimension\+\_\+l)
+\item 
+\mbox{\Hypertarget{classkafi_1_1kalman__filter_aa4888172602a28b5ba64fe82fdd755d7}\label{classkafi_1_1kalman__filter_aa4888172602a28b5ba64fe82fdd755d7}} 
+void {\bfseries kalman\+\_\+step} (const blaze\+::\+Dynamic\+Matrix$<$ float $>$ \&jacobian\+\_\+cf\+\_\+m, const blaze\+::\+Dynamic\+Matrix$<$ float $>$ \&noise\+\_\+q\+\_\+m, const blaze\+::\+Dynamic\+Matrix$<$ float $>$ \&c\+\_\+h\+\_\+m, const blaze\+::\+Dynamic\+Matrix$<$ float $>$ \&cov\+\_\+noise\+\_\+m, const blaze\+::\+Dynamic\+Vector$<$ float $>$ \&observed\+\_\+v)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classkafi_1_1kalman__filter_a1450ee00ac92b310e8cdb5521fc14db7}\label{classkafi_1_1kalman__filter_a1450ee00ac92b310e8cdb5521fc14db7}} 
+void {\bfseries \+\_\+predict} (const blaze\+::\+Dynamic\+Matrix$<$ float $>$ \&jacobian\+\_\+cf\+\_\+m, const blaze\+::\+Dynamic\+Matrix$<$ float $>$ \&noise\+\_\+q\+\_\+m)
+\item 
+\mbox{\Hypertarget{classkafi_1_1kalman__filter_aea3254ded3e403461e66e5b4a2f5dafb}\label{classkafi_1_1kalman__filter_aea3254ded3e403461e66e5b4a2f5dafb}} 
+void {\bfseries \+\_\+update} (const blaze\+::\+Dynamic\+Matrix$<$ float $>$ \&c\+\_\+h\+\_\+m, const blaze\+::\+Dynamic\+Matrix$<$ float $>$ \&cov\+\_\+noise\+\_\+m, const blaze\+::\+Dynamic\+Vector$<$ float $>$ \&observed\+\_\+v)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classkafi_1_1kalman__filter_a9ca1c25515bab589b5b54fad1b71bd36}\label{classkafi_1_1kalman__filter_a9ca1c25515bab589b5b54fad1b71bd36}} 
+size\+\_\+t {\bfseries \+\_\+state\+\_\+dimension\+\_\+n} \{0\}
+\item 
+\mbox{\Hypertarget{classkafi_1_1kalman__filter_a5628d4071253bb2bd8575b595328bc7f}\label{classkafi_1_1kalman__filter_a5628d4071253bb2bd8575b595328bc7f}} 
+size\+\_\+t {\bfseries \+\_\+sensor\+\_\+dimension\+\_\+m} \{0\}
+\item 
+\mbox{\Hypertarget{classkafi_1_1kalman__filter_a3b6c0f819aee2d6e5e5f752c5f5f6d43}\label{classkafi_1_1kalman__filter_a3b6c0f819aee2d6e5e5f752c5f5f6d43}} 
+size\+\_\+t {\bfseries \+\_\+control\+\_\+dimension\+\_\+l} \{0\}
+\item 
+\mbox{\Hypertarget{classkafi_1_1kalman__filter_acbe3339eeed459ffbb0d1b3fbd464a8f}\label{classkafi_1_1kalman__filter_acbe3339eeed459ffbb0d1b3fbd464a8f}} 
+blaze\+::\+Diagonal\+Matrix$<$ blaze\+::\+Dynamic\+Matrix$<$ float $>$ $>$ {\bfseries \+\_\+predict\+\_\+old\+\_\+m}
+\item 
+\mbox{\Hypertarget{classkafi_1_1kalman__filter_aaa9735b382d91e09119200b1fd8b6571}\label{classkafi_1_1kalman__filter_aaa9735b382d91e09119200b1fd8b6571}} 
+blaze\+::\+Dynamic\+Vector$<$ float, blaze\+::column\+Vector $>$ {\bfseries \+\_\+est\+\_\+state\+\_\+old\+\_\+v}
+\item 
+\mbox{\Hypertarget{classkafi_1_1kalman__filter_aa4b0683be5dba96c0a549567fa6a3b87}\label{classkafi_1_1kalman__filter_aa4b0683be5dba96c0a549567fa6a3b87}} 
+blaze\+::\+Diagonal\+Matrix$<$ blaze\+::\+Dynamic\+Matrix$<$ float $>$ $>$ {\bfseries \+\_\+predict\+\_\+m}
+\item 
+\mbox{\Hypertarget{classkafi_1_1kalman__filter_ad2994738b4325a77c7f42367936eed03}\label{classkafi_1_1kalman__filter_ad2994738b4325a77c7f42367936eed03}} 
+blaze\+::\+Dynamic\+Vector$<$ float, blaze\+::column\+Vector $>$ {\bfseries \+\_\+est\+\_\+state\+\_\+v}
+\item 
+\mbox{\Hypertarget{classkafi_1_1kalman__filter_aa30a750c76d7fd945d11c77aba63506d}\label{classkafi_1_1kalman__filter_aa30a750c76d7fd945d11c77aba63506d}} 
+blaze\+::\+Dynamic\+Matrix$<$ float $>$ {\bfseries \+\_\+gain\+\_\+m}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+library/kalman\+\_\+filter.\+h\end{DoxyCompactItemize}

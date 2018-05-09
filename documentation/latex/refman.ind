@@ -1,0 +1,9 @@
+\begin{theindex}
+
+  \item {kafi\+::jacobian\+\_\+function$<$ N, M $>$}, \hyperpage{3}
+  \item {kafi\+::kafi$<$ N, M $>$}, \hyperpage{4}
+  \item {kafi\+::kalman\+\_\+filter}, \hyperpage{5}
+  \item {kafi\+::prediction$<$ N, M $>$}, \hyperpage{5}
+  \item {kafi\+::update$<$ N, M $>$}, \hyperpage{6}
+
+\end{theindex}

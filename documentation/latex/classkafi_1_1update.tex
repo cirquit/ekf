@@ -1,0 +1,55 @@
+\hypertarget{classkafi_1_1update}{}\section{kafi\+:\+:update$<$ N, M $>$ Class Template Reference}
+\label{classkafi_1_1update}\index{kafi\+::update$<$ N, M $>$@{kafi\+::update$<$ N, M $>$}}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classkafi_1_1update_a78607717dbf14d14cdb995a90cbd1705}\label{classkafi_1_1update_a78607717dbf14d14cdb995a90cbd1705}} 
+using {\bfseries nx1\+\_\+vector} = blaze\+::\+Static\+Matrix$<$ double, N, 1\+U\+L, blaze\+::row\+Major $>$
+\item 
+\mbox{\Hypertarget{classkafi_1_1update_aaf0408a638fb5f3a256f3f74aba341e5}\label{classkafi_1_1update_aaf0408a638fb5f3a256f3f74aba341e5}} 
+using {\bfseries mx1\+\_\+vector} = blaze\+::\+Static\+Matrix$<$ double, M, 1\+U\+L, blaze\+::row\+Major $>$
+\item 
+\mbox{\Hypertarget{classkafi_1_1update_a6ebe68465475eb615a253bfbbb2be28d}\label{classkafi_1_1update_a6ebe68465475eb615a253bfbbb2be28d}} 
+using {\bfseries mxn\+\_\+matrix} = blaze\+::\+Static\+Matrix$<$ double, M, N, blaze\+::row\+Major $>$
+\item 
+\mbox{\Hypertarget{classkafi_1_1update_ad61c623b89ac0330e6bc162847373091}\label{classkafi_1_1update_ad61c623b89ac0330e6bc162847373091}} 
+using {\bfseries nxm\+\_\+matrix} = blaze\+::\+Static\+Matrix$<$ double, N, M, blaze\+::row\+Major $>$
+\item 
+\mbox{\Hypertarget{classkafi_1_1update_ac4ab079ae322dfca57a4f9a70266d3dd}\label{classkafi_1_1update_ac4ab079ae322dfca57a4f9a70266d3dd}} 
+using {\bfseries mxm\+\_\+matrix} = blaze\+::\+Static\+Matrix$<$ double, M, M, blaze\+::row\+Major $>$
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classkafi_1_1update_acc497b118654c3b8580d244cc57ec361}\label{classkafi_1_1update_acc497b118654c3b8580d244cc57ec361}} 
+{\bfseries update} (const \hyperlink{classkafi_1_1jacobian__function}{jacobian\+\_\+function}$<$ N, M $>$ \&prediction\+\_\+scaling, const mxm\+\_\+matrix \&sensor\+\_\+noise, nxn\+\_\+matrix \&prediction\+\_\+error, \hyperlink{classkafi_1_1prediction}{prediction}$<$ N, M $>$ \&\hyperlink{classkafi_1_1prediction}{prediction})
+\item 
+\mbox{\Hypertarget{classkafi_1_1update_a1acdb6fb08bb5106df5190d1cd52c9b4}\label{classkafi_1_1update_a1acdb6fb08bb5106df5190d1cd52c9b4}} 
+std\+::tuple$<$ nx1\+\_\+vector, nxn\+\_\+matrix $>$ {\bfseries apply} (nx1\+\_\+vector new\+\_\+state)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classkafi_1_1update_a0f6b23c8db93eaabebb57f04261b558b}\label{classkafi_1_1update_a0f6b23c8db93eaabebb57f04261b558b}} 
+const \hyperlink{classkafi_1_1jacobian__function}{jacobian\+\_\+function}$<$ N, M $>$ {\bfseries \+\_\+prediction\+\_\+scaling}
+\item 
+\mbox{\Hypertarget{classkafi_1_1update_a5f1400abcbc39bbe79da665be423da8d}\label{classkafi_1_1update_a5f1400abcbc39bbe79da665be423da8d}} 
+const mxm\+\_\+matrix {\bfseries \+\_\+sensor\+\_\+noise}
+\item 
+\mbox{\Hypertarget{classkafi_1_1update_aa20b763af43462c49c505534e7a2abdf}\label{classkafi_1_1update_aa20b763af43462c49c505534e7a2abdf}} 
+nx1\+\_\+vector \& {\bfseries \+\_\+state}
+\item 
+\mbox{\Hypertarget{classkafi_1_1update_a5e614c901581bb10706cf78fe8ef0e25}\label{classkafi_1_1update_a5e614c901581bb10706cf78fe8ef0e25}} 
+nxn\+\_\+matrix {\bfseries \+\_\+prediction\+\_\+error}
+\item 
+\mbox{\Hypertarget{classkafi_1_1update_a19ee3abe314c3b92e84efca1658366f1}\label{classkafi_1_1update_a19ee3abe314c3b92e84efca1658366f1}} 
+\hyperlink{classkafi_1_1prediction}{prediction}$<$ N, M $>$ \& {\bfseries \+\_\+prediction}
+\item 
+\mbox{\Hypertarget{classkafi_1_1update_a9a9f9566358afc6c9d761dcc4e8b7ac6}\label{classkafi_1_1update_a9a9f9566358afc6c9d761dcc4e8b7ac6}} 
+nxm\+\_\+matrix {\bfseries \+\_\+gain}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+library/update.\+h\end{DoxyCompactItemize}

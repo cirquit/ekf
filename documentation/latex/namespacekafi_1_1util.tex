@@ -1,0 +1,141 @@
+\hypertarget{namespacekafi_1_1util}{}\section{kafi\+:\+:util Namespace Reference}
+\label{namespacekafi_1_1util}\index{kafi\+::util@{kafi\+::util}}
+
+
+Utilities namespace so summarize often used functions from different modules.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$size\+\_\+t N, bool SO$>$ }\\constexpr blaze\+::\+Static\+Matrix$<$ double, N, N, SO $>$ \hyperlink{namespacekafi_1_1util_adebb31ac70499385be7e7693e9c73453}{create\+\_\+identity} ()
+\begin{DoxyCompactList}\small\item\em Static allocated identity matrix specialized for doubles. \end{DoxyCompactList}\item 
+{\footnotesize template$<$size\+\_\+t N, size\+\_\+t M$>$ }\\std\+::function$<$ void(blaze\+::\+Static\+Matrix$<$ double, N, 1\+U\+L, blaze\+::row\+Major $>$ \&, blaze\+::\+Static\+Matrix$<$ double, M, 1\+U\+L, blaze\+::row\+Major $>$ \&)$>$ \hyperlink{namespacekafi_1_1util_a9a257c47aefec8bf7538ab2ee5c4027d}{identity\+\_\+broadcast\+\_\+function} ()
+\begin{DoxyCompactList}\small\item\em Identity function which takes the {\ttfamily in(0,0)} element and broadcasts it to the {\ttfamily mx1\+\_\+vector} in every dimension. \end{DoxyCompactList}\item 
+{\footnotesize template$<$size\+\_\+t N$>$ }\\const std\+::function$<$ double(const blaze\+::\+Static\+Matrix$<$ double, N, 1\+U\+L, blaze\+::row\+Major $>$ \&)$>$ \hyperlink{namespacekafi_1_1util_af5c6d0524f5bd84aaaa74a1a1cc5512a}{identity\+\_\+derivative} (double ret)
+\begin{DoxyCompactList}\small\item\em Derivative function of \hyperlink{namespacekafi_1_1util_a9a257c47aefec8bf7538ab2ee5c4027d}{util\+::identity\+\_\+broadcast\+\_\+function}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$size\+\_\+t N, size\+\_\+t M$>$ }\\\hyperlink{classkafi_1_1jacobian__function}{jacobian\+\_\+function}$<$ N, M $>$ \hyperlink{namespacekafi_1_1util_a82e8f22857719d09437ce64e90c4b457}{create\+\_\+identity\+\_\+jacobian} ()
+\begin{DoxyCompactList}\small\item\em Helper function to create a broadcasting identity function for easier tests on multiple dimensions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Utilities namespace so summarize often used functions from different modules. 
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacekafi_1_1util_adebb31ac70499385be7e7693e9c73453}\label{namespacekafi_1_1util_adebb31ac70499385be7e7693e9c73453}} 
+\index{kafi\+::util@{kafi\+::util}!create\+\_\+identity@{create\+\_\+identity}}
+\index{create\+\_\+identity@{create\+\_\+identity}!kafi\+::util@{kafi\+::util}}
+\subsubsection{\texorpdfstring{create\+\_\+identity()}{create\_identity()}}
+{\footnotesize\ttfamily template$<$size\+\_\+t N, bool SO$>$ \\
+constexpr blaze\+::\+Static\+Matrix$<$double, N, N, SO$>$ kafi\+::util\+::create\+\_\+identity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Static allocated identity matrix specialized for doubles. 
+
+Template arguments\+:
+\begin{DoxyItemize}
+\item {\ttfamily N} = Number of rows and columns
+\item {\ttfamily SO} = Storage order, e.\+g {\ttfamily blaze\+::row\+Major}
+\end{DoxyItemize}
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000006}{Todo}]make generic with S\+F\+I\+N\+AE and {\ttfamily is\+\_\+integral} check on inner type {\ttfamily T} (currently {\ttfamily double}) \end{DoxyRefDesc}
+\mbox{\Hypertarget{namespacekafi_1_1util_a82e8f22857719d09437ce64e90c4b457}\label{namespacekafi_1_1util_a82e8f22857719d09437ce64e90c4b457}} 
+\index{kafi\+::util@{kafi\+::util}!create\+\_\+identity\+\_\+jacobian@{create\+\_\+identity\+\_\+jacobian}}
+\index{create\+\_\+identity\+\_\+jacobian@{create\+\_\+identity\+\_\+jacobian}!kafi\+::util@{kafi\+::util}}
+\subsubsection{\texorpdfstring{create\+\_\+identity\+\_\+jacobian()}{create\_identity\_jacobian()}}
+{\footnotesize\ttfamily template$<$size\+\_\+t N, size\+\_\+t M$>$ \\
+\hyperlink{classkafi_1_1jacobian__function}{jacobian\+\_\+function}$<$N,M$>$ kafi\+::util\+::create\+\_\+identity\+\_\+jacobian (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Helper function to create a broadcasting identity function for easier tests on multiple dimensions. 
+
+Template arguments\+:
+\begin{DoxyItemize}
+\item {\ttfamily N} = state dimensions
+\item {\ttfamily M} = sensor dimensions
+\end{DoxyItemize}
+
+See examples in \href{../../tests/jacobian_function_tests.cc}{\tt tests/jacobian\+\_\+function\+\_\+tests.\+cc}
+
+Example with {\ttfamily N = 3} and {\ttfamily M = 5}\+: 
+\begin{DoxyCode}
+   \_N\_        \_\_M \_\_\_\_    
+  /   \(\backslash\)      /        \(\backslash\)
+f[x,y,z] =  [x,x,x,x,x]    (these vectors are actually transposed)
+             0 1 2 3 4
+\end{DoxyCode}
+ Formula\+: 
+\begin{DoxyCode}
+             \_\_\_\_\_\_N\_(3)\_\_\_\_\_
+            /                \(\backslash\) \_\_
+F[x,y,z] = [[0/dx, 0/dy, 0/dz]   \(\backslash\)
+            [1/dx, 1/dy, 1/dz]   |
+            [2/dx, 2/dy, 2/dz]]  M (5)
+            [3/dx, 3/dy, 3/dz]]  |
+            [4/dx, 4/dy, 4/dz]]\_\_/
+\end{DoxyCode}
+ Calculation for our broadcast identity function -\/ \hyperlink{namespacekafi_1_1util_a9a257c47aefec8bf7538ab2ee5c4027d}{util\+::identity\+\_\+broadcast\+\_\+function} 
+\begin{DoxyCode}
+F[x,y,z] = [[ 1, 0, 0 ]
+            [ 1, 0, 0 ]
+            [ 1, 0, 0 ]
+            [ 1, 0, 0 ]
+            [ 1, 0, 0 ]]
+\end{DoxyCode}
+ \mbox{\Hypertarget{namespacekafi_1_1util_a9a257c47aefec8bf7538ab2ee5c4027d}\label{namespacekafi_1_1util_a9a257c47aefec8bf7538ab2ee5c4027d}} 
+\index{kafi\+::util@{kafi\+::util}!identity\+\_\+broadcast\+\_\+function@{identity\+\_\+broadcast\+\_\+function}}
+\index{identity\+\_\+broadcast\+\_\+function@{identity\+\_\+broadcast\+\_\+function}!kafi\+::util@{kafi\+::util}}
+\subsubsection{\texorpdfstring{identity\+\_\+broadcast\+\_\+function()}{identity\_broadcast\_function()}}
+{\footnotesize\ttfamily template$<$size\+\_\+t N, size\+\_\+t M$>$ \\
+std\+::function$<$void(blaze\+::\+Static\+Matrix$<$double, N, 1\+U\+L, blaze\+::row\+Major$>$ \& , blaze\+::\+Static\+Matrix$<$double, M, 1\+U\+L, blaze\+::row\+Major$>$ \&)$>$ kafi\+::util\+::identity\+\_\+broadcast\+\_\+function (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Identity function which takes the {\ttfamily in(0,0)} element and broadcasts it to the {\ttfamily mx1\+\_\+vector} in every dimension. 
+
+Example\+:
+\begin{DoxyItemize}
+\item {\ttfamily in$<$4,1$>$ = \mbox{[}1,2,3,4\mbox{]}}
+\item {\ttfamily out$<$2,1$>$ = \mbox{[}1, 1\mbox{]}}
+\end{DoxyItemize}
+
+Template arguments\+:
+\begin{DoxyItemize}
+\item {\ttfamily N} = state dimensions
+\item {\ttfamily M} = sensor dimensions
+\end{DoxyItemize}
+
+Return type\+:
+\begin{DoxyItemize}
+\item std\+::function( {\ttfamily nx1\+\_\+vector}, {\ttfamily mx1\+\_\+vector} ) -\/$>$ {\itshape void}
+\end{DoxyItemize}
+
+See more examples in \href{../../tests/util_tests.cc}{\tt tests/util\+\_\+tests.\+cc} \mbox{\Hypertarget{namespacekafi_1_1util_af5c6d0524f5bd84aaaa74a1a1cc5512a}\label{namespacekafi_1_1util_af5c6d0524f5bd84aaaa74a1a1cc5512a}} 
+\index{kafi\+::util@{kafi\+::util}!identity\+\_\+derivative@{identity\+\_\+derivative}}
+\index{identity\+\_\+derivative@{identity\+\_\+derivative}!kafi\+::util@{kafi\+::util}}
+\subsubsection{\texorpdfstring{identity\+\_\+derivative()}{identity\_derivative()}}
+{\footnotesize\ttfamily template$<$size\+\_\+t N$>$ \\
+const std\+::function$<$double(const blaze\+::\+Static\+Matrix$<$double, N, 1\+U\+L, blaze\+::row\+Major$>$ \&)$>$ kafi\+::util\+::identity\+\_\+derivative (\begin{DoxyParamCaption}\item[{double}]{ret }\end{DoxyParamCaption})}
+
+
+
+Derivative function of \hyperlink{namespacekafi_1_1util_a9a257c47aefec8bf7538ab2ee5c4027d}{util\+::identity\+\_\+broadcast\+\_\+function}. 
+
+Used to create a partial derivative, parametrizable with the return type, mostly 0 or 1
+
+Template arguments\+:
+\begin{DoxyItemize}
+\item {\ttfamily N} = state dimensions
+\end{DoxyItemize}
+
+Return type\+:
+\begin{DoxyItemize}
+\item std\+::function( {\ttfamily const nx1\+\_\+vector} ) -\/$>$ {\itshape double}
+\end{DoxyItemize}
+
+See examples in \href{../../tests/util_tests.cc}{\tt tests/util\+\_\+tests.\+cc} 

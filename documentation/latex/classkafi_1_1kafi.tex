@@ -1,0 +1,341 @@
+\hypertarget{classkafi_1_1kafi}{}\section{kafi\+:\+:kafi$<$ N, M $>$ Class Template Reference}
+\label{classkafi_1_1kafi}\index{kafi\+::kafi$<$ N, M $>$@{kafi\+::kafi$<$ N, M $>$}}
+
+
+A templated E\+KF class with static matrix sizes.  
+
+
+
+
+{\ttfamily \#include $<$kafi.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classkafi_1_1kafi_a9fc1cf6d76a14493ec33c03f3a3699c7}\label{classkafi_1_1kafi_a9fc1cf6d76a14493ec33c03f3a3699c7}} 
+using \hyperlink{classkafi_1_1kafi_a9fc1cf6d76a14493ec33c03f3a3699c7}{self\+\_\+t} = \hyperlink{classkafi_1_1kafi}{kafi}$<$ N, M $>$
+\begin{DoxyCompactList}\small\item\em self type for conciseness \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classkafi_1_1kafi_a47144ae2efe936ede222eced035a6e46}\label{classkafi_1_1kafi_a47144ae2efe936ede222eced035a6e46}} 
+using \hyperlink{classkafi_1_1kafi_a47144ae2efe936ede222eced035a6e46}{nx1\+\_\+vector} = typename \hyperlink{classkafi_1_1jacobian__function}{jacobian\+\_\+function}$<$ N, M $>$\+::\hyperlink{classkafi_1_1kafi_a47144ae2efe936ede222eced035a6e46}{nx1\+\_\+vector}
+\begin{DoxyCompactList}\small\item\em copied typename for conciseness \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classkafi_1_1kafi_a3a6f412f435a9e1f81178f36965822c3}\label{classkafi_1_1kafi_a3a6f412f435a9e1f81178f36965822c3}} 
+using \hyperlink{classkafi_1_1kafi_a3a6f412f435a9e1f81178f36965822c3}{mx1\+\_\+vector} = typename \hyperlink{classkafi_1_1jacobian__function}{jacobian\+\_\+function}$<$ N, M $>$\+::\hyperlink{classkafi_1_1kafi_a3a6f412f435a9e1f81178f36965822c3}{mx1\+\_\+vector}
+\begin{DoxyCompactList}\small\item\em copied typename for conciseness \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classkafi_1_1kafi_aff7caef22091a9df5285ecf70dad2388}\label{classkafi_1_1kafi_aff7caef22091a9df5285ecf70dad2388}} 
+using \hyperlink{classkafi_1_1kafi_aff7caef22091a9df5285ecf70dad2388}{mxn\+\_\+matrix} = typename \hyperlink{classkafi_1_1jacobian__function}{jacobian\+\_\+function}$<$ N, M $>$\+::\hyperlink{classkafi_1_1kafi_aff7caef22091a9df5285ecf70dad2388}{mxn\+\_\+matrix}
+\begin{DoxyCompactList}\small\item\em copied typename for conciseness \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classkafi_1_1kafi_a637e94a4aa607b8c62ca61fb3d986430}\label{classkafi_1_1kafi_a637e94a4aa607b8c62ca61fb3d986430}} 
+using \hyperlink{classkafi_1_1kafi_a637e94a4aa607b8c62ca61fb3d986430}{nxm\+\_\+matrix} = typename \hyperlink{classkafi_1_1jacobian__function}{jacobian\+\_\+function}$<$ N, M $>$\+::\hyperlink{classkafi_1_1kafi_a637e94a4aa607b8c62ca61fb3d986430}{nxm\+\_\+matrix}
+\begin{DoxyCompactList}\small\item\em copied typename for conciseness \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classkafi_1_1kafi_af3ca34ea0c57e9054e4c2d51fc7e5971}\label{classkafi_1_1kafi_af3ca34ea0c57e9054e4c2d51fc7e5971}} 
+using \hyperlink{classkafi_1_1kafi_af3ca34ea0c57e9054e4c2d51fc7e5971}{mxm\+\_\+matrix} = typename \hyperlink{classkafi_1_1jacobian__function}{jacobian\+\_\+function}$<$ N, M $>$\+::\hyperlink{classkafi_1_1kafi_af3ca34ea0c57e9054e4c2d51fc7e5971}{mxm\+\_\+matrix}
+\begin{DoxyCompactList}\small\item\em copied typename for conciseness \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classkafi_1_1kafi_a771d8045a61e16033e4a644675b5f4e7}\label{classkafi_1_1kafi_a771d8045a61e16033e4a644675b5f4e7}} 
+using \hyperlink{classkafi_1_1kafi_a771d8045a61e16033e4a644675b5f4e7}{nxn\+\_\+matrix} = typename \hyperlink{classkafi_1_1jacobian__function}{jacobian\+\_\+function}$<$ N, M $>$\+::\hyperlink{classkafi_1_1kafi_a771d8045a61e16033e4a644675b5f4e7}{nxn\+\_\+matrix}
+\begin{DoxyCompactList}\small\item\em copied typename for conciseness \end{DoxyCompactList}\item 
+using \hyperlink{classkafi_1_1kafi_a7dcd4a6f44ce454d56328f38ab053927}{return\+\_\+t} = std\+::tuple$<$ const \hyperlink{classkafi_1_1kafi_a47144ae2efe936ede222eced035a6e46}{nx1\+\_\+vector} \&, const \hyperlink{classkafi_1_1kafi_a771d8045a61e16033e4a644675b5f4e7}{nxn\+\_\+matrix} \&, const \hyperlink{classkafi_1_1kafi_a637e94a4aa607b8c62ca61fb3d986430}{nxm\+\_\+matrix} \& $>$
+\begin{DoxyCompactList}\small\item\em copied typename for conciseness \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classkafi_1_1kafi_aa77148b74aeb52b1d4853aaf02bb06a8}{kafi} (const \hyperlink{classkafi_1_1jacobian__function}{jacobian\+\_\+function}$<$ N, N $>$ f, const \hyperlink{classkafi_1_1jacobian__function}{jacobian\+\_\+function}$<$ N, M $>$ h, \hyperlink{classkafi_1_1kafi_a47144ae2efe936ede222eced035a6e46}{nx1\+\_\+vector} starting\+\_\+state, \hyperlink{classkafi_1_1kafi_a3a6f412f435a9e1f81178f36965822c3}{mx1\+\_\+vector} \&observation, const \hyperlink{classkafi_1_1kafi_a771d8045a61e16033e4a644675b5f4e7}{nxn\+\_\+matrix} \&process\+\_\+noise, const \hyperlink{classkafi_1_1kafi_af3ca34ea0c57e9054e4c2d51fc7e5971}{mxm\+\_\+matrix} \&sensor\+\_\+noise)
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classkafi_1_1kafi_a6218f5982061df432131779719d3055d}\label{classkafi_1_1kafi_a6218f5982061df432131779719d3055d}} 
+\hyperlink{classkafi_1_1kafi_a6218f5982061df432131779719d3055d}{kafi} (const \hyperlink{classkafi_1_1jacobian__function}{jacobian\+\_\+function}$<$ N, N $>$ f, const \hyperlink{classkafi_1_1jacobian__function}{jacobian\+\_\+function}$<$ N, M $>$ h, \hyperlink{classkafi_1_1kafi_a47144ae2efe936ede222eced035a6e46}{nx1\+\_\+vector} starting\+\_\+state, \hyperlink{classkafi_1_1kafi_a3a6f412f435a9e1f81178f36965822c3}{mx1\+\_\+vector} \&observation, const \hyperlink{classkafi_1_1kafi_a771d8045a61e16033e4a644675b5f4e7}{nxn\+\_\+matrix} \&process\+\_\+noise, const \hyperlink{classkafi_1_1kafi_af3ca34ea0c57e9054e4c2d51fc7e5971}{mxm\+\_\+matrix} \&sensor\+\_\+noise, const \hyperlink{classkafi_1_1kafi_a771d8045a61e16033e4a644675b5f4e7}{nxn\+\_\+matrix} \&prediction\+\_\+error)
+\begin{DoxyCompactList}\small\item\em The same as the default constructor, but with custom {\ttfamily prediction error} initialization. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classkafi_1_1kafi_a02d964ca4eb4777101d26583daa8279d}\label{classkafi_1_1kafi_a02d964ca4eb4777101d26583daa8279d}} 
+\hyperlink{classkafi_1_1kafi_a02d964ca4eb4777101d26583daa8279d}{kafi} (const \hyperlink{classkafi_1_1kafi_a9fc1cf6d76a14493ec33c03f3a3699c7}{self\+\_\+t} \&other)=delete
+\begin{DoxyCompactList}\small\item\em Copy constructor is deleted because kafi owns multiple different potentially big matrices. \end{DoxyCompactList}\item 
+\hyperlink{classkafi_1_1kafi_ac2331ba8c5ad075cbdb6580eb41bf9eb}{kafi} (const \hyperlink{classkafi_1_1kafi_a9fc1cf6d76a14493ec33c03f3a3699c7}{self\+\_\+t} \&\&other)=delete
+\begin{DoxyCompactList}\small\item\em Move constructor is deleted because kafi is probably not movable. \end{DoxyCompactList}\item 
+void \hyperlink{classkafi_1_1kafi_a8bb1520922ac9bab7479c89a9681b956}{set\+\_\+current\+\_\+observation} (\hyperlink{classkafi_1_1kafi_a3a6f412f435a9e1f81178f36965822c3}{mx1\+\_\+vector} \&observation)
+\item 
+\hyperlink{classkafi_1_1kafi_a7dcd4a6f44ce454d56328f38ab053927}{return\+\_\+t} \hyperlink{classkafi_1_1kafi_ae78f8f011e499e806294d6e6575a47c3}{step} ()
+\begin{DoxyCompactList}\small\item\em Main function that runs the Kalman Filter based on new or old observation, and apply the prediction and update step. \end{DoxyCompactList}\item 
+void \hyperlink{classkafi_1_1kafi_ac9627c8086987fb34edc5ef85abee316}{print\+\_\+state\+\_\+to} (std\+::ostream \&stream)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classkafi_1_1kafi_a29ff5938b1fd205fe3861370d6455227}{new\+\_\+data\+\_\+available} ()
+\begin{DoxyCompactList}\small\item\em Private methods. \end{DoxyCompactList}\item 
+void \hyperlink{classkafi_1_1kafi_a0e5b7cf6b263950c54270e27287f24f2}{apply\+\_\+prediction} ()
+\begin{DoxyCompactList}\small\item\em Applying the prediction formulae. \end{DoxyCompactList}\item 
+void \hyperlink{classkafi_1_1kafi_a4e90a69f858c0c49f7fde168561da254}{apply\+\_\+update} ()
+\begin{DoxyCompactList}\small\item\em Applying the update formulae. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classkafi_1_1kafi_a587808218449470fd9ef72ccc4beb8a4}\label{classkafi_1_1kafi_a587808218449470fd9ef72ccc4beb8a4}} 
+const \hyperlink{classkafi_1_1jacobian__function}{jacobian\+\_\+function}$<$ N, N $>$ \hyperlink{classkafi_1_1kafi_a587808218449470fd9ef72ccc4beb8a4}{\+\_\+f}
+\begin{DoxyCompactList}\small\item\em state transition function \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classkafi_1_1kafi_a5ee835f35d2e2db3610c294765f632b9}\label{classkafi_1_1kafi_a5ee835f35d2e2db3610c294765f632b9}} 
+\hyperlink{classkafi_1_1kafi_a771d8045a61e16033e4a644675b5f4e7}{nxn\+\_\+matrix} \hyperlink{classkafi_1_1kafi_a5ee835f35d2e2db3610c294765f632b9}{\+\_\+f\+\_\+jacobian\+\_\+temp}
+\begin{DoxyCompactList}\small\item\em preallocated jacobian matrix space for {\ttfamily \+\_\+f} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classkafi_1_1kafi_ad803fa941efc4d5e5835181d576725f6}\label{classkafi_1_1kafi_ad803fa941efc4d5e5835181d576725f6}} 
+const \hyperlink{classkafi_1_1jacobian__function}{jacobian\+\_\+function}$<$ N, M $>$ \hyperlink{classkafi_1_1kafi_ad803fa941efc4d5e5835181d576725f6}{\+\_\+h}
+\begin{DoxyCompactList}\small\item\em prediction scaling function \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classkafi_1_1kafi_ae0c84c0999e8d52240ee979920aae07f}\label{classkafi_1_1kafi_ae0c84c0999e8d52240ee979920aae07f}} 
+\hyperlink{classkafi_1_1kafi_a3a6f412f435a9e1f81178f36965822c3}{mx1\+\_\+vector} \hyperlink{classkafi_1_1kafi_ae0c84c0999e8d52240ee979920aae07f}{\+\_\+h\+\_\+temp}
+\begin{DoxyCompactList}\small\item\em preallocated vector space for {\ttfamily \+\_\+h} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classkafi_1_1kafi_a058866cbcc97c123ebd9ec2378e32b2c}\label{classkafi_1_1kafi_a058866cbcc97c123ebd9ec2378e32b2c}} 
+\hyperlink{classkafi_1_1kafi_aff7caef22091a9df5285ecf70dad2388}{mxn\+\_\+matrix} \hyperlink{classkafi_1_1kafi_a058866cbcc97c123ebd9ec2378e32b2c}{\+\_\+h\+\_\+jacobian\+\_\+temp}
+\begin{DoxyCompactList}\small\item\em preallocated jacobian matrix space for {\ttfamily \+\_\+h} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classkafi_1_1kafi_a4d62565c0dfe71e5d432c0cd04a66136}\label{classkafi_1_1kafi_a4d62565c0dfe71e5d432c0cd04a66136}} 
+const \hyperlink{classkafi_1_1kafi_a771d8045a61e16033e4a644675b5f4e7}{nxn\+\_\+matrix} \hyperlink{classkafi_1_1kafi_a4d62565c0dfe71e5d432c0cd04a66136}{\+\_\+process\+\_\+noise}
+\begin{DoxyCompactList}\small\item\em {\ttfamily Q} (covariance of real world) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classkafi_1_1kafi_a79675f9b45665189a44430e93667d696}\label{classkafi_1_1kafi_a79675f9b45665189a44430e93667d696}} 
+const \hyperlink{classkafi_1_1kafi_af3ca34ea0c57e9054e4c2d51fc7e5971}{mxm\+\_\+matrix} \hyperlink{classkafi_1_1kafi_a79675f9b45665189a44430e93667d696}{\+\_\+sensor\+\_\+noise}
+\begin{DoxyCompactList}\small\item\em {\ttfamily cN} (covariance of sensors) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classkafi_1_1kafi_a79036f08f420e6de9c11dada4e4b67f6}\label{classkafi_1_1kafi_a79036f08f420e6de9c11dada4e4b67f6}} 
+const \hyperlink{classkafi_1_1kafi_a771d8045a61e16033e4a644675b5f4e7}{nxn\+\_\+matrix} \hyperlink{classkafi_1_1kafi_a79036f08f420e6de9c11dada4e4b67f6}{\+\_\+identity}
+\begin{DoxyCompactList}\small\item\em {\ttfamily I} (identity matrix) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classkafi_1_1kafi_a83457abd1caed518a3c162b873f8e39c}\label{classkafi_1_1kafi_a83457abd1caed518a3c162b873f8e39c}} 
+\hyperlink{classkafi_1_1kafi_a47144ae2efe936ede222eced035a6e46}{nx1\+\_\+vector} \hyperlink{classkafi_1_1kafi_a83457abd1caed518a3c162b873f8e39c}{\+\_\+state}
+\begin{DoxyCompactList}\small\item\em {\ttfamily s\+\_\+t} (at time {\ttfamily t}), used as the preallocated vector space of {\ttfamily \+\_\+f} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classkafi_1_1kafi_acd1957b1eef474dab5ddb3122b833f56}\label{classkafi_1_1kafi_acd1957b1eef474dab5ddb3122b833f56}} 
+\hyperlink{classkafi_1_1kafi_a3a6f412f435a9e1f81178f36965822c3}{mx1\+\_\+vector} \& \hyperlink{classkafi_1_1kafi_acd1957b1eef474dab5ddb3122b833f56}{\+\_\+observation}
+\begin{DoxyCompactList}\small\item\em {\ttfamily o\+\_\+t} (reference, the caller is responsible for the allocation) \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classkafi_1_1kafi_abcaf040c76f04e76cd3759ef292aacca}\label{classkafi_1_1kafi_abcaf040c76f04e76cd3759ef292aacca}} 
+\hyperlink{classkafi_1_1kafi_a771d8045a61e16033e4a644675b5f4e7}{nxn\+\_\+matrix} \hyperlink{classkafi_1_1kafi_abcaf040c76f04e76cd3759ef292aacca}{\+\_\+prediction\+\_\+error}
+\begin{DoxyCompactList}\small\item\em {\ttfamily P\+\_\+t} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classkafi_1_1kafi_af88dd9bf341987b55a6c3cb67bc274d2}\label{classkafi_1_1kafi_af88dd9bf341987b55a6c3cb67bc274d2}} 
+\hyperlink{classkafi_1_1kafi_a637e94a4aa607b8c62ca61fb3d986430}{nxm\+\_\+matrix} \hyperlink{classkafi_1_1kafi_af88dd9bf341987b55a6c3cb67bc274d2}{\+\_\+gain}
+\begin{DoxyCompactList}\small\item\em {\ttfamily G\+\_\+t} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classkafi_1_1kafi_a71ea198e7fb5f0b39d194fdc9dd5ab87}\label{classkafi_1_1kafi_a71ea198e7fb5f0b39d194fdc9dd5ab87}} 
+bool \hyperlink{classkafi_1_1kafi_a71ea198e7fb5f0b39d194fdc9dd5ab87}{\+\_\+new\+\_\+data\+\_\+available}
+\begin{DoxyCompactList}\small\item\em used to run the kafi\+::apply\+\_\+update() function, changed in kafi\+::new\+\_\+data\+\_\+available() \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classkafi_1_1kafi_a81c9924f127a060411250ce2c2bc5daa}\label{classkafi_1_1kafi_a81c9924f127a060411250ce2c2bc5daa}} 
+size\+\_\+t \hyperlink{classkafi_1_1kafi_a81c9924f127a060411250ce2c2bc5daa}{\+\_\+prediction\+\_\+count}
+\begin{DoxyCompactList}\small\item\em used for logging purposes, tracks how often kafi\+::apply\+\_\+prediction() was run \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classkafi_1_1kafi_a8815ba7f3fb319d6ac58386096d3313f}\label{classkafi_1_1kafi_a8815ba7f3fb319d6ac58386096d3313f}} 
+size\+\_\+t \hyperlink{classkafi_1_1kafi_a8815ba7f3fb319d6ac58386096d3313f}{\+\_\+update\+\_\+count}
+\begin{DoxyCompactList}\small\item\em used for logging purposes, tracks how often kafi\+::apply\+\_\+update() was run \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{classkafi_1_1kafi_a648211fb566ac0cd37c803ea98783193}{operator$<$$<$} (std\+::ostream \&stream, const \hyperlink{classkafi_1_1kafi_a9fc1cf6d76a14493ec33c03f3a3699c7}{self\+\_\+t} \&rhs)
+\begin{DoxyCompactList}\small\item\em Overloading stream operator for logging purposes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$size\+\_\+t N, size\+\_\+t M$>$\newline
+class kafi\+::kafi$<$ N, M $>$}
+
+A templated E\+KF class with static matrix sizes. 
+
+Template arguments\+:
+\begin{DoxyItemize}
+\item {\ttfamily N} = state dimensions
+\item {\ttfamily M} = sensor dimensions
+\end{DoxyItemize}
+
+See examples at \href{../../tests/kafi_tests.cc}{\tt tests/kafi\+\_\+tests.\+cc} 
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classkafi_1_1kafi_a7dcd4a6f44ce454d56328f38ab053927}\label{classkafi_1_1kafi_a7dcd4a6f44ce454d56328f38ab053927}} 
+\index{kafi\+::kafi@{kafi\+::kafi}!return\+\_\+t@{return\+\_\+t}}
+\index{return\+\_\+t@{return\+\_\+t}!kafi\+::kafi@{kafi\+::kafi}}
+\subsubsection{\texorpdfstring{return\+\_\+t}{return\_t}}
+{\footnotesize\ttfamily template$<$size\+\_\+t N, size\+\_\+t M$>$ \\
+using \hyperlink{classkafi_1_1kafi}{kafi\+::kafi}$<$ N, M $>$\+::\hyperlink{classkafi_1_1kafi_a7dcd4a6f44ce454d56328f38ab053927}{return\+\_\+t} =  std\+::tuple$<$const \hyperlink{classkafi_1_1kafi_a47144ae2efe936ede222eced035a6e46}{nx1\+\_\+vector} \&, const \hyperlink{classkafi_1_1kafi_a771d8045a61e16033e4a644675b5f4e7}{nxn\+\_\+matrix} \&, const \hyperlink{classkafi_1_1kafi_a637e94a4aa607b8c62ca61fb3d986430}{nxm\+\_\+matrix} \&$>$}
+
+
+
+copied typename for conciseness 
+
+Shorthand for a useful return type for the kalman filter
+\begin{DoxyItemize}
+\item {\ttfamily const nx1\+\_\+vector \& = std\+::get$<$0$>$(x)} = state
+\item {\ttfamily const nxn\+\_\+matrix \& = std\+::get$<$1$>$(x)} = prediction error
+\item {\ttfamily const nxm\+\_\+matrix \& = std\+::get$<$2$>$(x)} = gain 
+\end{DoxyItemize}
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classkafi_1_1kafi_aa77148b74aeb52b1d4853aaf02bb06a8}\label{classkafi_1_1kafi_aa77148b74aeb52b1d4853aaf02bb06a8}} 
+\index{kafi\+::kafi@{kafi\+::kafi}!kafi@{kafi}}
+\index{kafi@{kafi}!kafi\+::kafi@{kafi\+::kafi}}
+\subsubsection{\texorpdfstring{kafi()}{kafi()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$size\+\_\+t N, size\+\_\+t M$>$ \\
+\hyperlink{classkafi_1_1kafi}{kafi\+::kafi}$<$ N, M $>$\+::\hyperlink{classkafi_1_1kafi}{kafi} (\begin{DoxyParamCaption}\item[{const \hyperlink{classkafi_1_1jacobian__function}{jacobian\+\_\+function}$<$ N, N $>$}]{f,  }\item[{const \hyperlink{classkafi_1_1jacobian__function}{jacobian\+\_\+function}$<$ N, M $>$}]{h,  }\item[{\hyperlink{classkafi_1_1kafi_a47144ae2efe936ede222eced035a6e46}{nx1\+\_\+vector}}]{starting\+\_\+state,  }\item[{\hyperlink{classkafi_1_1kafi_a3a6f412f435a9e1f81178f36965822c3}{mx1\+\_\+vector} \&}]{observation,  }\item[{const \hyperlink{classkafi_1_1kafi_a771d8045a61e16033e4a644675b5f4e7}{nxn\+\_\+matrix} \&}]{process\+\_\+noise,  }\item[{const \hyperlink{classkafi_1_1kafi_af3ca34ea0c57e9054e4c2d51fc7e5971}{mxm\+\_\+matrix} \&}]{sensor\+\_\+noise }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor. 
+
+Template arguments\+:
+\begin{DoxyItemize}
+\item {\ttfamily N} = state dimensions
+\item {\ttfamily M} = sensor dimensions
+\end{DoxyItemize}
+
+Arguments\+:
+\begin{DoxyItemize}
+\item {\ttfamily const \hyperlink{classkafi_1_1jacobian__function}{jacobian\+\_\+function}$<$ N, N $>$ f}\+: state transision function with their jacobian
+\item {\ttfamily const \hyperlink{classkafi_1_1jacobian__function}{jacobian\+\_\+function}$<$ N, M $>$ h}\+: prediction scaling function with their jacobian
+\item {\ttfamily nx1\+\_\+vector starting\+\_\+state}\+: initial state can be copied (kafi is owner)
+\item {\ttfamily mx1\+\_\+vector \& observation}\+: design decision, we need to explicitly initialize the observation, even if this will not be used in the first \hyperlink{classkafi_1_1kafi_ae78f8f011e499e806294d6e6575a47c3}{step()}. Use {\ttfamily \hyperlink{classkafi_1_1kafi_a8bb1520922ac9bab7479c89a9681b956}{set\+\_\+current\+\_\+observation()}}
+\item {\ttfamily const nxn\+\_\+matrix \& process\+\_\+noise}\+: the {\itshape real world} noise
+\item {\ttfamily const mxm\+\_\+matrix \& sensor\+\_\+noise}\+: the sensor covariance noise matrix
+
+Initializing {\ttfamily prediction\+\_\+error} to identity matrix via \hyperlink{namespacekafi_1_1util_adebb31ac70499385be7e7693e9c73453}{util\+::create\+\_\+identity$<$\+N, blaze\+::row\+Major$>$()} 
+\end{DoxyItemize}\mbox{\Hypertarget{classkafi_1_1kafi_ac2331ba8c5ad075cbdb6580eb41bf9eb}\label{classkafi_1_1kafi_ac2331ba8c5ad075cbdb6580eb41bf9eb}} 
+\index{kafi\+::kafi@{kafi\+::kafi}!kafi@{kafi}}
+\index{kafi@{kafi}!kafi\+::kafi@{kafi\+::kafi}}
+\subsubsection{\texorpdfstring{kafi()}{kafi()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$size\+\_\+t N, size\+\_\+t M$>$ \\
+\hyperlink{classkafi_1_1kafi}{kafi\+::kafi}$<$ N, M $>$\+::\hyperlink{classkafi_1_1kafi}{kafi} (\begin{DoxyParamCaption}\item[{const \hyperlink{classkafi_1_1kafi_a9fc1cf6d76a14493ec33c03f3a3699c7}{self\+\_\+t} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Move constructor is deleted because kafi is probably not movable. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000003}{Todo}]Test moveability \end{DoxyRefDesc}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classkafi_1_1kafi_a0e5b7cf6b263950c54270e27287f24f2}\label{classkafi_1_1kafi_a0e5b7cf6b263950c54270e27287f24f2}} 
+\index{kafi\+::kafi@{kafi\+::kafi}!apply\+\_\+prediction@{apply\+\_\+prediction}}
+\index{apply\+\_\+prediction@{apply\+\_\+prediction}!kafi\+::kafi@{kafi\+::kafi}}
+\subsubsection{\texorpdfstring{apply\+\_\+prediction()}{apply\_prediction()}}
+{\footnotesize\ttfamily template$<$size\+\_\+t N, size\+\_\+t M$>$ \\
+void \hyperlink{classkafi_1_1kafi}{kafi\+::kafi}$<$ N, M $>$\+::apply\+\_\+prediction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Applying the prediction formulae. 
+
+Modifying\+:
+\begin{DoxyItemize}
+\item {\ttfamily \+\_\+prediction\+\_\+error}
+\item {\ttfamily \+\_\+state}
+\item {\ttfamily \+\_\+prediction\+\_\+count} 
+\end{DoxyItemize}\mbox{\Hypertarget{classkafi_1_1kafi_a4e90a69f858c0c49f7fde168561da254}\label{classkafi_1_1kafi_a4e90a69f858c0c49f7fde168561da254}} 
+\index{kafi\+::kafi@{kafi\+::kafi}!apply\+\_\+update@{apply\+\_\+update}}
+\index{apply\+\_\+update@{apply\+\_\+update}!kafi\+::kafi@{kafi\+::kafi}}
+\subsubsection{\texorpdfstring{apply\+\_\+update()}{apply\_update()}}
+{\footnotesize\ttfamily template$<$size\+\_\+t N, size\+\_\+t M$>$ \\
+void \hyperlink{classkafi_1_1kafi}{kafi\+::kafi}$<$ N, M $>$\+::apply\+\_\+update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Applying the update formulae. 
+
+{\bfseries Invariant}\+:
+\begin{DoxyItemize}
+\item {\ttfamily \+\_\+observation} has to be initialized, implemented through kafi\+::new\+\_\+data\+\_\+available()
+\end{DoxyItemize}
+
+Modifying\+:
+\begin{DoxyItemize}
+\item {\ttfamily \+\_\+gain}
+\item {\ttfamily \+\_\+state}
+\item {\ttfamily \+\_\+prediction\+\_\+error}
+\item {\ttfamily \+\_\+update\+\_\+count}
+\item {\ttfamily \+\_\+h\+\_\+temp}
+\end{DoxyItemize}
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000005}{Todo}]cache {\ttfamily trans(\+H)} \end{DoxyRefDesc}
+\mbox{\Hypertarget{classkafi_1_1kafi_a29ff5938b1fd205fe3861370d6455227}\label{classkafi_1_1kafi_a29ff5938b1fd205fe3861370d6455227}} 
+\index{kafi\+::kafi@{kafi\+::kafi}!new\+\_\+data\+\_\+available@{new\+\_\+data\+\_\+available}}
+\index{new\+\_\+data\+\_\+available@{new\+\_\+data\+\_\+available}!kafi\+::kafi@{kafi\+::kafi}}
+\subsubsection{\texorpdfstring{new\+\_\+data\+\_\+available()}{new\_data\_available()}}
+{\footnotesize\ttfamily template$<$size\+\_\+t N, size\+\_\+t M$>$ \\
+bool \hyperlink{classkafi_1_1kafi}{kafi\+::kafi}$<$ N, M $>$\+::new\+\_\+data\+\_\+available (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Private methods. 
+
+A check if the flag {\ttfamily \+\_\+new\+\_\+data\+\_\+available} is true and flips it \mbox{\Hypertarget{classkafi_1_1kafi_ac9627c8086987fb34edc5ef85abee316}\label{classkafi_1_1kafi_ac9627c8086987fb34edc5ef85abee316}} 
+\index{kafi\+::kafi@{kafi\+::kafi}!print\+\_\+state\+\_\+to@{print\+\_\+state\+\_\+to}}
+\index{print\+\_\+state\+\_\+to@{print\+\_\+state\+\_\+to}!kafi\+::kafi@{kafi\+::kafi}}
+\subsubsection{\texorpdfstring{print\+\_\+state\+\_\+to()}{print\_state\_to()}}
+{\footnotesize\ttfamily template$<$size\+\_\+t N, size\+\_\+t M$>$ \\
+void \hyperlink{classkafi_1_1kafi}{kafi\+::kafi}$<$ N, M $>$\+::print\+\_\+state\+\_\+to (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{stream }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+print helper for conciseness \mbox{\Hypertarget{classkafi_1_1kafi_a8bb1520922ac9bab7479c89a9681b956}\label{classkafi_1_1kafi_a8bb1520922ac9bab7479c89a9681b956}} 
+\index{kafi\+::kafi@{kafi\+::kafi}!set\+\_\+current\+\_\+observation@{set\+\_\+current\+\_\+observation}}
+\index{set\+\_\+current\+\_\+observation@{set\+\_\+current\+\_\+observation}!kafi\+::kafi@{kafi\+::kafi}}
+\subsubsection{\texorpdfstring{set\+\_\+current\+\_\+observation()}{set\_current\_observation()}}
+{\footnotesize\ttfamily template$<$size\+\_\+t N, size\+\_\+t M$>$ \\
+void \hyperlink{classkafi_1_1kafi}{kafi\+::kafi}$<$ N, M $>$\+::set\+\_\+current\+\_\+observation (\begin{DoxyParamCaption}\item[{\hyperlink{classkafi_1_1kafi_a3a6f412f435a9e1f81178f36965822c3}{mx1\+\_\+vector} \&}]{observation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+To make the kafi concurrent, this function may be given via the constructor, so this class is responsible for getting the observation
+
+Every call to this function is assumed to fill new, previously unknown observation This equality check of observation\+\_\+t and observation\+\_\+t-\/1 is delegated to the caller
+
+Modifying\+:
+\begin{DoxyItemize}
+\item {\ttfamily \+\_\+observation}
+\item {\ttfamily \+\_\+new\+\_\+data\+\_\+available}
+\end{DoxyItemize}
+
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000004}{Todo}]make {\ttfamily \+\_\+observation} a reference so we don\textquotesingle{}t do a deep copy \end{DoxyRefDesc}
+\mbox{\Hypertarget{classkafi_1_1kafi_ae78f8f011e499e806294d6e6575a47c3}\label{classkafi_1_1kafi_ae78f8f011e499e806294d6e6575a47c3}} 
+\index{kafi\+::kafi@{kafi\+::kafi}!step@{step}}
+\index{step@{step}!kafi\+::kafi@{kafi\+::kafi}}
+\subsubsection{\texorpdfstring{step()}{step()}}
+{\footnotesize\ttfamily template$<$size\+\_\+t N, size\+\_\+t M$>$ \\
+\hyperlink{classkafi_1_1kafi_a7dcd4a6f44ce454d56328f38ab053927}{return\+\_\+t} \hyperlink{classkafi_1_1kafi}{kafi\+::kafi}$<$ N, M $>$\+::step (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Main function that runs the Kalman Filter based on new or old observation, and apply the prediction and update step. 
+
+Modifying\+:
+\begin{DoxyItemize}
+\item {\ttfamily \+\_\+gain}
+\item {\ttfamily \+\_\+state}
+\item {\ttfamily \+\_\+prediction\+\_\+error}
+\end{DoxyItemize}
+
+Return\+:
+\begin{DoxyItemize}
+\item tuple of
+\begin{DoxyItemize}
+\item state
+\item prediction\+\_\+error
+\item gain 
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classkafi_1_1kafi_a648211fb566ac0cd37c803ea98783193}\label{classkafi_1_1kafi_a648211fb566ac0cd37c803ea98783193}} 
+\index{kafi\+::kafi@{kafi\+::kafi}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!kafi\+::kafi@{kafi\+::kafi}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily template$<$size\+\_\+t N, size\+\_\+t M$>$ \\
+std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{stream,  }\item[{const \hyperlink{classkafi_1_1kafi_a9fc1cf6d76a14493ec33c03f3a3699c7}{self\+\_\+t} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Overloading stream operator for logging purposes. 
+
+Might look like this\+: 
+\begin{DoxyCode}
+Kafi:
+  Update      # calls: 1
+  Predictions # calls: 1
+ [S] \hyperlink{classkafi_1_1kafi_a83457abd1caed518a3c162b873f8e39c}{\_state}:
+(      19.6226 )
+============================
+ [O] \hyperlink{classkafi_1_1kafi_acd1957b1eef474dab5ddb3122b833f56}{\_observation}:
+(       18.625 )
+(           20 )
+============================
+ [P] \hyperlink{classkafi_1_1kafi_abcaf040c76f04e76cd3759ef292aacca}{\_prediction\_error}:
+(     0.245255 )
+============================
+ [G] \hyperlink{classkafi_1_1kafi_af88dd9bf341987b55a6c3cb67bc274d2}{\_gain}:
+(     0.383212     0.383212 )
+============================
+\end{DoxyCode}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+library/kafi.\+h\end{DoxyCompactItemize}
