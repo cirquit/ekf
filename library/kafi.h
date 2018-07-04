@@ -65,9 +65,9 @@ class kafi {
          *  * `const nxn_matrix & = std::get<1>(x)` = prediction error   
          *  * `const nxm_matrix & = std::get<2>(x)` = gain               
          */
-        using return_t   = std::tuple<const nx1_vector &,
-                                      const nxn_matrix &,
-                                      const nxm_matrix &>;
+        using return_t   = std::tuple<const nx1_vector,
+                                      const nxn_matrix,
+                                      const nxm_matrix>;
 
     // constructors
     public:
@@ -286,7 +286,7 @@ class kafi {
         }
 
     // member
-    private:
+    public:
         // functions with their respective preallocated resources
 
         //! state transition function
