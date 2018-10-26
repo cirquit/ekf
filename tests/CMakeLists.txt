@@ -15,7 +15,7 @@
 set(SOURCES catch.h csv.h main.cc jacobian_function_tests.cc util_tests.cc kafi_tests.cc)
 
 add_executable(${TEST_NAME} ${SOURCES})
-target_link_libraries(${TEST_NAME} ${LIB_NAME})
+target_link_libraries(${TEST_NAME} ${CPP_LIB_NAME})
 
 file(COPY test-data DESTINATION .)  # execute ./kafi_tests
 file(COPY test-data DESTINATION ..) # execute ./tests/kafi_tests

@@ -20,6 +20,7 @@
 #include <memory>
 #include "jacobian_function.h"
 #include "util.h"
+#include "autogen-KAFI-macros.h"
 
 /*!
  *  \addtogroup kafi
@@ -171,9 +172,9 @@ class kafi {
             {
                 apply_update();
             }
-            #if DEBUG_MODE
-            print_state_to(std::cerr);
-            #endif
+            
+            //print_state_to(std::cerr);
+            DEBUG_MSG_KAFI(*this);
             return std::make_tuple(_state, _prediction_error, _gain);
         }
         /** \brief Overloading stream operator for logging purposes

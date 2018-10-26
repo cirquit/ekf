@@ -26,10 +26,6 @@
 //! unused macro to avoid errors because of nonuse of declared variables
 #define UNUSED(x) (void)(x)
 
-#if !defined(DEBUG_MODE)
-    #error DEBUG_MODE has to be defined through 'cmake .. -DDEBUG_MODE=[0/1]'
-#endif
-
 namespace kafi
 {   /** \brief Utilities namespace so summarize often used functions from different modules
       *
