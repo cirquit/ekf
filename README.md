@@ -48,6 +48,32 @@ Enable optimizations (default `OFF`):
 > cmake .. -DENABLE_OPTIMIZATIONS_KAFI=ON
 ```
 
+### Installation (cmake only)
+
+##### Subdirectory
+
+You can easily reference the headers by hand and link to the `kafi` library in your `CMakeLists.txt` if you have this repository as a subdirectory of your main repository. Add this to your `CMakeLists.txt`:
+
+```cmake
+target_link_libraries(${your-awesome-executable} ${your-awesome-library} kafi )
+```
+
+##### System level installation
+
+If you want a system-level installation just type `make install` in your `build` directory. Then you need to add the following to your own code `CMakeLists.txt`:
+
+```cmake
+find_package(kafi version 1.0 REQUIRED)
+target_link_libraries(${your-awesome-executable} ${your-awesome-library} kafi )
+```
+
+To use the library, include this header and check out the [documentation](documentation)
+
+```c++
+#include <kafi-1.0/kafi.h>
+```
+
+
 ### Basic runthrough of the API
 
 Explanation of the first test in [tests/kafi_tests.cc](tests/kafi_tests.cc).
@@ -138,7 +164,7 @@ Created with doxygen (with Markdown support)
 Update documentation:
 
 ```bash
-> cd KaFi
+> cd Kalman-Filter
 > doxygen doxygen.config
 > cd documentation/latex
 > make
