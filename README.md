@@ -1,27 +1,130 @@
+# Extended Kalman Filter
 
-Extended Kalman Filter Library
-============
+An implementation of an [EKF](https://en.wikipedia.org/wiki/Extended_Kalman_filter) in C++ with `O(1)` runtime complexity.
+
+---
+
+Inteded to use on embedded systems. Uses [Blaze](https://bitbucket.org/blaze-lib/blaze/overview)
+for linear algebra.
+
+Example usage may be found in [tests/kafi_tests.cc](tests/kafi_tests.cc).
+
+No automatic derivation, but also the *state* and *prection scaling* are defined as [std::function](https://en.cppreference.com/w/cpp/utility/functional/function), not as matricies. You can define **non-linear** transformations by hand.
+
+---
+
+If you see this on github, it's only a mirror of our internal municHMotorsport gitlab repository. The repository name may not match in the following build instructions.
+
+---
 
 ### Build
 
-#### Production build
-
 ```bash
-> cd KaFi
+> git clone://gitlab.munichmotorsport.com/fsd-software/Kalman-Filter
+> cd Kalman-Filter
 > mkdir build && cd build
 > cmake .. 
-> make
+> make -j
 > ./tests/kafi_tests
 ```
 
-#### Test build
+Trigger tests (default `ON`):
 
 ```bash
-> cd KaFi
-> mkdir build-debug && cd build-debug
-> cmake .. -DDEBUG_MODE=1
-> make
-> ./tests/kafi_tests
+> cmake .. -DENABLE_TESTS_KAFI=OFF
+```
+
+Change debug level (default: 2 ~ everything will be printed to `cerr`):
+
+```bash
+> cmake .. -DDEBUG_LEVEL_KAFI=[0,1,2]
+```
+
+Enable optimizations (default `OFF`):
+
+```bash
+> cmake .. -DENABLE_OPTIMIZATIONS_KAFI=ON
+```
+
+### Basic runthrough of the API
+
+Explanation of the first test in [tests/kafi_tests.cc](tests/kafi_tests.cc).
+
+We try to estimate the temperature based on two uncorrelated thermometers.
+
+* `N` - this is the state dimension. We estimate only a single temperature, hence `N = 1`
+* `M` - this is the sensor dimension. We have two thermometers, hence `M = 2`
+
+We use multiple typenames to avoid `auto` in the examples.
+
+---
+
+```c++
+// state transition
+kafi::jacobian_function<N,N> f(
+    std::move(kafi::util::create_identity_jacobian<N,N>()));
+
+// prediction scaling (state -> observations)
+kafi::jacobian_function<N,M> h(
+    std::move(kafi::util::create_identity_jacobian<N,M>()));
+```
+
+First we have to create the `f` function, which is the **state transition**. This means it takes a vector of `N` element (the *state*) and returns the  modified state based on the knowledge of the environment. If we would've known any *control parameters* this might look different.
+
+Therefore we can simply have the identity function as the **state transition**. This looks slightly convoluted, because we also need the derivative of this function, which is also automatically generated for the identity function based on the size `N`.
+
+The same goes for the `h` function, which scales the state (`N`) to the observation dimension (`M`). The function broadcasts automatically first value of the state vector to all observation dimensions. In our example:
+
+```python
+state = [20] # estimated C°
+observations = [21.1, 21.5] # noisy C°
+
+[20, 20] = h(state)
+
+# do stuff with observations and h(state)
+``` 
+
+---
+
+```c++
+// given by our example, read as "the real world temperature changes are 0.22° (0.22^2 =~ 0.05)"
+nxn_matrix process_noise( { { 0.05 } } );
+// given by our example, read as "both temperature sensors fluctuate by 0.8° (0.8^2 = 0.64)"
+mxm_matrix sensor_noise( { { 0.64, 0    }
+                         , { 0,    0.64 } });
+// given by our example, read as "first time we measured temperature, we got these values"
+std::shared_ptr< mx1_vector > first_observation = std::make_shared< mx1_vector >(
+                                                       mx1_vector({ { 18.625 } 
+                                                                  , { 20     } }));
+```
+
+We create the process noise and the sensor noise as blaze matricies. The first observation is packed in a [`std::shared_ptr`](https://en.cppreference.com/w/cpp/memory/shared_ptr) because the EKF **does not own** it.
+
+We share it with a shared pointer, the EKF uses it, but the ownership never transitions, because **we don't want to allocate** unnecessarly. The callee has to manage the allocation space for the observations.
+
+---
+
+```c++
+kafi.set_current_observation(first_observation);
+// run the estimation
+return_t   result          = kafi.step();
+nx1_vector estimated_state = std::get<0>(result);
+```
+
+The `step()` function applies the *prediction* step and *update* step consecutively.
+
+`result_t` consists of:
+
+```c++
+const nx1_vector & estimated_state  = std::get<0>(result)
+const nxn_matrix & prediction error = std::get<1>(result)
+const nxm_matrix & gain             = std::get<2>(result)
+```
+
+To access the elements, use the [blaze matrix access reference](https://bitbucket.org/blaze-lib/blaze/wiki/Matrix%20Operations#!element-access).
+
+```c++
+double temperature = estimated_state(0,0)
 ```
 
 ### Documentation
@@ -38,33 +141,11 @@ Update documentation:
 > cd documentation/latex
 > make
 ```
-
-### Parameters that need to be variable:
-
-  *  `n` -> state dimension i.e. how many values we want to estimate  
-
-        => applied to out case `n = 2` (car position in `X` and `Y`)
-
-  *  `m` ->  sensor dimensions, i.e. how many sensor values do we have.  
-
-        => applied to our case: velocity, acceleration, SLAM(?)
-
-  *  `l` -> the amount of control dimensions, e.g how much information do we have to apply to the state.  
-
-  *  *s_t* the estimated state is a vector of `(n x 1)` dimensions
-
-    Our case: *s_t(x,y)*  *[x y]*
-
-
-
 ### Dependencies
 
 * [fast-cpp-csv-parser](https://github.com/ben-strasser/fast-cpp-csv-parser)
-    - header only (used for tests)
-
-* [blaze](https://bitbucket.org/blaze-lib/blaze/overview)  
-    - for ubuntu 16.04
-
+    - header only, used for tests (already included)
+* [blaze](https://bitbucket.org/blaze-lib/blaze/overview) (tested on ubuntu 16.04)
 ```bash 
 > wget https://bitbucket.org/blaze-lib/blaze/downloads/blaze-3.3.tar.gz
 > tar -xvf blaze-3.3.tar.gz
@@ -73,12 +154,3 @@ Update documentation:
 > cmake -DCMAKE_INSTALL_PREFIX=/usr/local/
 > sudo make install
 ```
-
-** otherwise (Mac OS) (unfinished)
-```bash
-    brew install boost
-```
-* optional, but needed for excellent performance 
-    - a [BLAS](http://www.netlib.org/blas/)
-    - and [LAPACK](http://www.netlib.org/lapack/)  
-  
