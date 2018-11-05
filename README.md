@@ -2,6 +2,8 @@
 
 An implementation of an [EKF](https://en.wikipedia.org/wiki/Extended_Kalman_filter) in C++ with `O(1)` runtime complexity.
 
+Based on the [excellent tutorial by Simon D. Levy](https://home.wlu.edu/~levys/kalman_tutorial/).
+
 ---
 
 Inteded to use on embedded systems. Uses [Blaze](https://bitbucket.org/blaze-lib/blaze/overview)
@@ -13,7 +15,7 @@ No automatic derivation, but also the *state* and *prection scaling* are defined
 
 ---
 
-If you see this on github, it's only a mirror of our internal municHMotorsport gitlab repository. The repository name may not match in the following build instructions.
+If you see this on github, it's only a mirror of our internal [municHMotorsport](https://www.munichmotorsport.de/) gitlab repository. The repository name may not match in the following build instructions.
 
 ---
 
